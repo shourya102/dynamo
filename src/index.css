@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=League+Spartan:wght@500&family=Martian+Mono&family=Noto+Serif&family=Open+Sans:wght@400;500&family=Playfair+Display:wght@500&family=Roboto:wght@500&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    font-family: 'Inter', sans-serif;
+}
