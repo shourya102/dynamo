@@ -19,7 +19,8 @@ module.exports = {
         'soft-blue': '#d9e4f5',
         'soft-pink': '#f5e3e6',
         'border-light': '#ddd',
-        'title-light': '#c2a1ab',
+        'title-light-pink': '#c2a1ab',
+        'title-light-blue': '#b0c3d1',
       }
     },
   },
