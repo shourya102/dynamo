@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.Navbar {
+    height: 5rem;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+}

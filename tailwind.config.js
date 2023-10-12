@@ -1,13 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{html,js}",
-    "public/index.html",
+  purge: [
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {
       fontFamily: {
-        'inter': ['Inter', 'sans-serif']
+        'inter': ['Inter', 'sans-serif'],
+        'varela': ['Varela Round', 'sans-serif'],
       },
       fontSize: {
         title: `2.6rem;`,
@@ -15,6 +15,12 @@ module.exports = {
         paragraph: `1.2rem;`,
         sub: `1.0rem`,
       },
+      colors: {
+        'soft-blue': '#d9e4f5',
+        'soft-pink': '#f5e3e6',
+        'border-light': '#ddd',
+        'title-light': '#c2a1ab',
+      }
     },
   },
   plugins: [],
