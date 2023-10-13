@@ -22,8 +22,7 @@ const Navbar = (props) => {
                 </div>
             </div>
             <div className="hidden lg:flex float-right justify-center items-center ml-4 mr-4 gap-3">
-                <ToggleButton/>
-                <button onClick={props.darkMode} className="bg-gray-500 rounded-full text-paragraph w-14 h-14 hover:bg-gray-700 shadow-xl"></button>
+                <ToggleButton click={props.darkMode}/>
                 <div className="bg-white rounded-full w-14 h-14"></div>
                 <div className="bg-white rounded-full w-14 h-14"></div>
             </div>

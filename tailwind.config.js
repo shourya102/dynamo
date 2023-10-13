@@ -18,7 +18,7 @@ module.exports = {
       textColor: {
         skin: {
           base: 'var(--text-color)',
-          hover: 'var(--text-color-hover)'
+          hover: 'var(--text-color-hover)',
         },
       },
       backgroundColor: {
@@ -26,6 +26,8 @@ module.exports = {
           'base-1': 'var(--fill-color-1)',
           'base-2': 'var(--fill-color-2)',
           'base-3': 'var(--fill-color-3)',
+          'fill-1': 'var(--fill-in-1)',
+          'fill-2': 'var(--fill-in-2)',
         },
       },
       gradientColorStops: {

@@ -1,17 +1,22 @@
 import React, {useState} from 'react';
+import './ToggleButton.css';
 
 const ToggleButton = (props) => {
-    const [pos, setPos] = useState('justify-start');
+    const [pos, setPos] = useState('');
     const handleClick = () => {
-            setPos(prevState => {
-                if(prevState === 'justify-start') return 'justify-end';
-                else return 'justify-start';
-            });
+        setPos(prevState => {
+            if (prevState === '') return 'translate-x-8';
+            else return '';
+        });
     }
     console.log(pos);
     return (
-        <div className={`w-20 h-14 bg-white flex rounded-3xl ${pos} items-center gap-2 p-1 transition-transform`}>
-            <button className={`flex rounded-full h-10 w-10 bg-gray-600`} onClick={handleClick}></button>
+        <div className={`ToggleButton w-20 h-14 bg-skin-fill-1 flex rounded-3xl items-center gap-2 p-1 shadow-sm`}>
+            <button className={`flex rounded-full h-10 w-10 bg-skin-fill-2 ${pos} transition-transform ease-in delay-100`}
+                    onClick={() => {
+                        handleClick();
+                        props.click();
+                    }}></button>
         </div>
     );
 }
