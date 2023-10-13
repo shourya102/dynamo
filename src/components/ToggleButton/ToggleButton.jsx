@@ -5,22 +5,21 @@ import {FaSun} from "react-icons/fa";
 
 const ToggleButton = (props) => {
     const [pos, setPos] = useState('');
-    const [isShown,setShown] = useState(false);
+    const [isShown, setShown] = useState(false);
     const handleClick = () => {
         setPos(prevState => {
-            if (prevState === '') return 'toggled';
-            else return '';
+            return prevState === '' ? 'toggled' : '';
         });
         setShown(prevState => {
-           return !prevState;
+            return !prevState;
         });
     }
 
     return (
         <div
-            className={`ToggleButton w-20 h-14 bg-skin-fill-1 flex rounded-3xl items-center gap-2 p-1 shadow-sm ${props.className}`}>
+            className={`ToggleButton w-20 h-14 bg-skin-fill-1 flex rounded-3xl items-center gap-2 p-1 ${props.className}`}>
             <button
-                className={`fix flex rounded-full bg-skin-fill-2 ${pos} transition-transform ease-in delay-100`}
+                className={`fix flex rounded-full bg-skin-fill-2 ${pos} transition-transform ease-in delay-100 shadow-sm`}
                 onClick={() => {
                     handleClick();
                     props.click();
