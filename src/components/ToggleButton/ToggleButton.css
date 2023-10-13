@@ -5,3 +5,8 @@
 .ToggleButton {
     border: 1px solid var(--border-color-1);
 }
+
+.fix {
+    min-height: calc(80%);
+    min-width: calc(50%);
+}
