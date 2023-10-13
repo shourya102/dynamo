@@ -5,10 +5,14 @@ import {FaSun} from "react-icons/fa";
 
 const ToggleButton = (props) => {
     const [pos, setPos] = useState('');
+    const [isShown,setShown] = useState(false);
     const handleClick = () => {
         setPos(prevState => {
             if (prevState === '') return 'toggled';
             else return '';
+        });
+        setShown(prevState => {
+           return !prevState;
         });
     }
 
@@ -22,9 +26,9 @@ const ToggleButton = (props) => {
                     props.click();
                 }}>
             </button>
-            <div className={`flex row`}>
-                {/*<BsFillMoonFill className={`inline float-right`} size={25} color={'rgb(0, 0, 0, 0.5)'}/>*/}
-                {/*<FaSun size={25} className={`inline float-left`} color={'rgb(0, 0, 0, 0.5)'}/>*/}
+            <div className="flex float-right icons gap-2">
+                {isShown && <BsFillMoonFill className="icon-item-1" size={25} color={'rgba(255,241,171,0.8)'}/>}
+                {!isShown && <FaSun size={25} color={'rgb(255, 80, 0, 0.8)'}/>}
             </div>
         </div>
     );
