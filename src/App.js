@@ -9,20 +9,22 @@ function App() {
     const [theme, setTheme] = useState('');
     const darkMode = () => {
         setTheme(prevState => {
-            if(prevState === '') return 'theme-dark';
+            if (prevState === '') return 'theme-dark';
             else return '';
         })
     }
     return (
         <div className={`${theme} App max-h-screen overflow-y-scroll`}>
-            <Navbar darkMode={darkMode}/>
             <Router>
+                <Navbar darkMode={darkMode}/>
+
                 <Routes>
                     <Route path='/' element={<Home/>}/>
                     
                 </Routes>
+
+                <Footer/>
             </Router>
-            <Footer/>
         </div>
     );
 }

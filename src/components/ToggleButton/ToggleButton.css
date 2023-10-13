@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.ToggleButton {
+    border: 1px solid var(--border-color-1);
+}
+
+.toggled {
+    transform: translateX(2.3rem);
+}
+
+.fix {
+    min-height: calc(80%);
+    min-width: calc(50%);
+}

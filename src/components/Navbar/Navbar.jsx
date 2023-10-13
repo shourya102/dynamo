@@ -3,6 +3,8 @@ import logo from './logo.png'
 import {FiMenu} from "react-icons/fi";
 import './Navbar.css';
 import ToggleButton from "../ToggleButton/ToggleButton";
+import {NavbarList} from "./NavbarList";
+import {Link} from "react-router-dom";
 
 const Navbar = (props) => {
     return (
@@ -14,16 +16,18 @@ const Navbar = (props) => {
                         .dynam<span className="text-title-light-blue">o</span>
                     </h1>
                 </div>
-                <div className="hidden lg:flex gap-5 text-paragraph">
-                    <div className="hover:text-skin-hover cursor-pointer">Home</div>
-                    <div className="hover:text-skin-hover cursor-pointer">Problems</div>
-                    <div className="hover:text-skin-hover cursor-pointer">Contest</div>
-                    <div className="hover:text-skin-hover cursor-pointer">Community</div>
-                </div>
+                <ul className="hidden lg:flex gap-5 text-paragraph">
+                    {NavbarList.map((item, index) => {
+                        return (
+                            <li key={index} className="hover:text-skin-hover cursor-pointer">
+                                <Link to={item.route}>{item.title}</Link>
+                            </li>
+                        );
+                    })}
+                </ul>
             </div>
             <div className="hidden lg:flex float-right justify-center items-center ml-4 mr-4 gap-3">
-                <ToggleButton/>
-                <button onClick={props.darkMode} className="bg-gray-500 rounded-full text-paragraph w-14 h-14 hover:bg-gray-700 shadow-xl"></button>
+                <ToggleButton click={props.darkMode}/>
                 <div className="bg-white rounded-full w-14 h-14"></div>
                 <div className="bg-white rounded-full w-14 h-14"></div>
             </div>

@@ -11,6 +11,8 @@
         --fill-color-1: #f5e3e6;
         --fill-color-2: #d9e4f5;
         --fill-color-3: rgb(255, 255, 255, 0.2);
+        --fill-in-1: rgb(200, 200, 200, 0.2);
+        --fill-in-2: rgb(125, 125, 125, 0.2);
         --border-color-1: #ddd;
         --border-color-2: #ccc;
     }
@@ -20,6 +22,8 @@
         --fill-color-1: #111;
         --fill-color-2: #333;
         --fill-color-3: rgb(55, 65, 81, 0.2);
+        --fill-in-1: rgb(100, 100, 100, 0.2);
+        --fill-in-2: rgb(10, 10, 10, 0.2);
         --border-color-1: #333;
         --border-color-2: #555;
     }
