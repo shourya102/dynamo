@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 import './ToggleButton.css';
+import {BsFillMoonFill} from "react-icons/bs";
+import {FaSun} from "react-icons/fa";
 
 const ToggleButton = (props) => {
     const [pos, setPos] = useState('');
     const handleClick = () => {
         setPos(prevState => {
-            if (prevState === '') return 'translate-x-8';
+            if (prevState === '') return 'toggled';
             else return '';
         });
     }
@@ -20,6 +22,10 @@ const ToggleButton = (props) => {
                     props.click();
                 }}>
             </button>
+            <div className={`flex row`}>
+                {/*<BsFillMoonFill className={`inline float-right`} size={25} color={'rgb(0, 0, 0, 0.5)'}/>*/}
+                {/*<FaSun size={25} className={`inline float-left`} color={'rgb(0, 0, 0, 0.5)'}/>*/}
+            </div>
         </div>
     );
 }
