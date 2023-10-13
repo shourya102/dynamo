@@ -5,6 +5,6 @@
 .Navbar {
     height: 5rem;
     width: 100%;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--border-color-1);
     position: sticky;
 }

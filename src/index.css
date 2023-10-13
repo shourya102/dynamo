@@ -4,6 +4,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    :root {
+        --text-color: rgb(115, 115, 115);
+        --text-color-hover: rgb(38, 38, 38);
+        --fill-color-1: #f5e3e6;
+        --fill-color-2: #d9e4f5;
+        --fill-color-3: rgb(255, 255, 255, 0.2);
+        --border-color-1: #ddd;
+        --border-color-2: #ccc;
+    }
+    .theme-dark {
+        --text-color: rgb(175, 175, 175);
+        --text-color-hover: rgb(255, 255, 255);
+        --fill-color-1: #111;
+        --fill-color-2: #333;
+        --fill-color-3: rgb(55, 65, 81, 0.2);
+        --border-color-1: #333;
+        --border-color-2: #555;
+    }
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -15,6 +36,4 @@ body {
     height: 100vh;
     font-family: 'Inter', sans-serif;
     background-color: #d9e4f5;
-    background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%);
-    @apply text-neutral-500 antialiased
 }

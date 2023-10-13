@@ -15,6 +15,30 @@ module.exports = {
         paragraph: `1.2rem;`,
         sub: `1.0rem`,
       },
+      textColor: {
+        skin: {
+          base: 'var(--text-color)',
+          hover: 'var(--text-color-hover)'
+        },
+      },
+      backgroundColor: {
+        skin: {
+          'base-1': 'var(--fill-color-1)',
+          'base-2': 'var(--fill-color-2)',
+          'base-3': 'var(--fill-color-3)',
+        },
+      },
+      gradientColorStops: {
+        skin: {
+
+        },
+      },
+      borderColor: {
+        skin: {
+          'border-1': 'var(--border-color-1)',
+          'border-2': 'var(--border-color-2)',
+        }
+      },
       colors: {
         'soft-blue': '#d9e4f5',
         'soft-pink': '#f5e3e6',

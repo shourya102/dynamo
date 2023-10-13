@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .Home {
-    max-height: calc(100vh - 5rem);
+    z-index: -1;
 }
