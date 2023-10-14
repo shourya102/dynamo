@@ -14,3 +14,11 @@
     min-height: calc(80%);
     min-width: calc(50%);
 }
+
+.icons {
+    z-index: -1;
+}
+
+.icon-item-1 {
+    transform: translateX(-2.4rem);
+}

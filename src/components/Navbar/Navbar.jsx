@@ -1,40 +1,73 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.png'
-import {FiMenu} from "react-icons/fi";
+import {FiMenu ,FiX} from "react-icons/fi";
 import './Navbar.css';
 import ToggleButton from "../ToggleButton/ToggleButton";
 import {NavbarList} from "./NavbarList";
 import {Link} from "react-router-dom";
 
+
 const Navbar = (props) => {
+
+    const[mobiletask , setmobiletask] = useState(false);
+    let mobileTaskStyle ="hidden";
+    const click =()=>{
+        setmobiletask(!mobiletask);
+        console.log("on click work");       
+        
+    }
+
     return (
-        <nav className="Navbar bg-skin-base-3 bg-opacity-20 flex justify-between shadow-sm">
-            <div className="flex float-left justify-center items-center ml-4 mr-4 gap-20">
-                <div className="flex items-center">
-                    <img src={logo} alt="logo" className="w-20"/>
-                    <h1 className="font-semibold text-title tracking-tighter text-title-light-pink">
-                        .dynam<span className="text-title-light-blue">o</span>
-                    </h1>
+        <div>
+            <nav className="Navbar bg-skin-base-3 bg-opacity-20 flex justify-between shadow-sm">
+                <div className="flex float-left justify-center items-center ml-4 mr-4 gap-20">
+                    <div className="flex items-center">
+                        <img src={logo} alt="logo" className="w-20"/>
+                        <h1 className="font-semibold text-title tracking-tighter text-title-light-pink">
+                            .dynam<span className="text-title-light-blue">o</span>
+                        </h1>
+                    </div>
+                    <ul className="hidden lg:flex gap-5 text-paragraph">
+                        {NavbarList.map((item, index) => {
+                            return (
+                                <li key={index} className="hover:text-skin-hover cursor-pointer">
+                                    <Link to={item.route}>{item.title}</Link>
+                                </li>
+                            );
+                        })}
+                    </ul>
                 </div>
-                <ul className="hidden lg:flex gap-5 text-paragraph">
-                    {NavbarList.map((item, index) => {
-                        return (
-                            <li key={index} className="hover:text-skin-hover cursor-pointer">
-                                <Link to={item.route}>{item.title}</Link>
-                            </li>
-                        );
-                    })}
-                </ul>
+                <div className="hidden lg:flex float-right justify-center items-center ml-4 mr-4 gap-3">
+                    <ToggleButton click={props.darkMode}/>
+                    <div className="bg-white rounded-full w-14 h-14"></div>
+                    <div className="bg-white rounded-full w-14 h-14"></div>
+                </div>
+                <button onClick={click} className="flex lg:hidden float-right justify-center items-center ml-4 mr-4">
+                    <FiMenu className={`${mobiletask ? "hidden" :""} transition `} size={30} opacity={'50%'}/>
+                    <FiX className={`${mobiletask ? "" :"hidden"} transition `} size={30} opacity={'50%'}/>
+
+                </button>
+            </nav>
+                
+            <div className={`bg-skin-base-3  bg-opacity-20 ${mobiletask ? "" :"hidden"}  flex flex-col gap-3 item-center justify-center shadow-sm`}>
+                <Link className=' text-center hover:text-skin-hover item-center w-[100%] cursor-pointer p-4 shadow-sm' to='/'>
+                    Home
+                </Link>
+                <Link className=' text-center hover:text-skin-hover item-center w-[100%] cursor-pointer p-3 shadow-sm' to='/sign-in'>
+                    Sign in
+                </Link>
+                <Link className=' text-center hover:text-skin-hover item-center w-[100%] cursor-pointer p-3 shadow-sm' to='/'>
+                    Problem
+                </Link>
+                <Link className=' text-center hover:text-skin-hover item-center w-[100%] cursor-pointer p-3 shadow-sm' to='/'>
+                    Contest
+                </Link>
+                <Link className=' text-center hover:text-skin-hover item-center w-[100%] cursor-pointer p-3 shadow-sm' to='/'>
+                    Community
+                </Link>
             </div>
-            <div className="hidden lg:flex float-right justify-center items-center ml-4 mr-4 gap-3">
-                <ToggleButton click={props.darkMode}/>
-                <div className="bg-white rounded-full w-14 h-14"></div>
-                <div className="bg-white rounded-full w-14 h-14"></div>
-            </div>
-            <div className="flex lg:hidden float-right justify-center items-center ml-4 mr-4">
-                <FiMenu size={30} opacity={'50%'}/>
-            </div>
-        </nav>
+    
+        </div>
     );
 }
 

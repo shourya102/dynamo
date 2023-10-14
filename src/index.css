@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=League+Spartan:wght@500&family=Martian+Mono&family=Noto+Serif&family=Open+Sans:wght@400;500&family=Playfair+Display:wght@500&family=Roboto:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,6 +17,7 @@
         --border-color-1: #ddd;
         --border-color-2: #ccc;
     }
+
     .theme-dark {
         --text-color: rgb(175, 175, 175);
         --text-color-hover: rgb(255, 255, 255);
