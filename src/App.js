@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import Home from './pages/Home/Home'
 import Footer from "./components/Footer/Footer";
 import React, {useState} from "react";
-import SignUP from './pages/SignUp/SignUP';
+import SignUp from './pages/SignUp/SignUp';
 import SignIn from './pages/SignIn/SignIn';
 
 function App() {
@@ -19,17 +19,11 @@ function App() {
         <div className={`${theme} App max-h-screen overflow-y-scroll`}>
             <Router>
                 <Navbar darkMode={darkMode}/>
-
                 <Routes>
                     <Route path='/' element={<Home/>}/>
-                    <Route path='/sign-up' element={<SignUP/>}/>
+                    <Route path='/sign-up' element={<SignUp/>}/>
                     <Route path='/sign-in' element={<SignIn/>}/>
-
-
-                    
-
                 </Routes>
-
                 <Footer/>
             </Router>
         </div>

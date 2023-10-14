@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import logo from './logo.png'
-import {FiMenu ,FiX} from "react-icons/fi";
+import {FiMenu, FiX} from "react-icons/fi";
 import './Navbar.css';
 import ToggleButton from "../ToggleButton/ToggleButton";
 import {NavbarList} from "./NavbarList";
@@ -9,12 +9,11 @@ import {Link} from "react-router-dom";
 
 const Navbar = (props) => {
 
-    const[mobiletask , setmobiletask] = useState(false);
-    let mobileTaskStyle ="hidden";
-    const click =()=>{
+    const [mobiletask, setmobiletask] = useState(false);
+    const click = () => {
         setmobiletask(!mobiletask);
-        console.log("on click work");       
-        
+        console.log("on click work");
+
     }
 
     return (
@@ -43,30 +42,33 @@ const Navbar = (props) => {
                     <div className="bg-white rounded-full w-14 h-14"></div>
                 </div>
                 <button onClick={click} className="flex lg:hidden float-right justify-center items-center ml-4 mr-4">
-                    <FiMenu className={`${mobiletask ? "hidden" :""} transition `} size={30} opacity={'50%'}/>
-                    <FiX className={`${mobiletask ? "" :"hidden"} transition `} size={30} opacity={'50%'}/>
-
+                    <FiMenu className={`${mobiletask ? "hidden" : ""} transition `} size={30} opacity={'50%'}/>
+                    <FiX className={`${mobiletask ? "" : "hidden"} transition `} size={30} opacity={'50%'}/>
                 </button>
             </nav>
-                
-            <div className={`bg-skin-base-3  bg-opacity-20 ${mobiletask ? "" :"hidden"}  flex flex-col gap-3 item-center justify-center shadow-sm`}>
-                <Link className=' text-center hover:text-skin-hover item-center w-[100%] cursor-pointer p-4 shadow-sm' to='/'>
+            <div
+                className={`bg-skin-base-3  bg-opacity-20 ${mobiletask ? "" : "hidden"}  flex flex-col gap-3 item-center justify-center shadow-sm`}>
+                <Link className=' text-center hover:text-skin-hover item-center w-[100%] cursor-pointer p-4 shadow-sm'
+                      to='/'>
                     Home
                 </Link>
-                <Link className=' text-center hover:text-skin-hover item-center w-[100%] cursor-pointer p-3 shadow-sm' to='/sign-in'>
+                <Link className=' text-center hover:text-skin-hover item-center w-[100%] cursor-pointer p-3 shadow-sm'
+                      to='/sign-in'>
                     Sign in
                 </Link>
-                <Link className=' text-center hover:text-skin-hover item-center w-[100%] cursor-pointer p-3 shadow-sm' to='/'>
+                <Link className=' text-center hover:text-skin-hover item-center w-[100%] cursor-pointer p-3 shadow-sm'
+                      to='/'>
                     Problem
                 </Link>
-                <Link className=' text-center hover:text-skin-hover item-center w-[100%] cursor-pointer p-3 shadow-sm' to='/'>
+                <Link className=' text-center hover:text-skin-hover item-center w-[100%] cursor-pointer p-3 shadow-sm'
+                      to='/'>
                     Contest
                 </Link>
-                <Link className=' text-center hover:text-skin-hover item-center w-[100%] cursor-pointer p-3 shadow-sm' to='/'>
+                <Link className=' text-center hover:text-skin-hover item-center w-[100%] cursor-pointer p-3 shadow-sm'
+                      to='/'>
                     Community
                 </Link>
             </div>
-    
         </div>
     );
 }
