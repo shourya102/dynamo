@@ -29,10 +29,10 @@ export default function SignIn() {
                             Sign In
                         </button>
                     </form>
-                    <div className='max-w-lg flex pt-3  gap-3 mx-auto'>
+                    <div className='max-w-lg flex pt-3  gap-3'>
                         <p>Don't have an account?</p>
                         <Link className='text-blue-600  hover:text-green-700' to='/sign-up'>
-                            <span>Sign Up</span>
+                            <span>Sign up</span>
                         </Link>
                     </div>
                     <div className='add-top  flex mt-5 p-3 gap-4 justify-center '>

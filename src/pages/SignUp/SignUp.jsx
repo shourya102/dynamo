@@ -35,7 +35,7 @@ export default function SignUp() {
                             Up
                         </button>
                     </form>
-                    <div className='max-w-lg flex pt-3  gap-3 mx-auto'>
+                    <div className='max-w-lg flex pt-3 gap-3'>
                         <p>Have an account?</p>
                         <Link className='text-blue-600  hover:text-green-700' to='/sign-in'>
                             <span className=''>Sign in</span>
