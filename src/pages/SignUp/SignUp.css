@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.SignUp {
+    min-height: calc(100vh - 4rem);
+}
+
+.fixb {
+    border: 1px solid var(--border-color-1);
+}
