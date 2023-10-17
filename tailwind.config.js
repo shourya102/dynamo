@@ -28,6 +28,7 @@ module.exports = {
           'base-3': 'var(--fill-color-3)',
           'fill-1': 'var(--fill-in-1)',
           'fill-2': 'var(--fill-in-2)',
+          'fill-3': 'var(--fill-in-3)',
         },
       },
       gradientColorStops: {
