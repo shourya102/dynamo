@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from './logo.png'
+import logo from './logo.png';
 import {FiMenu ,FiX} from "react-icons/fi";
 import './Navbar.css';
 import ToggleButton from "../ToggleButton/ToggleButton";
@@ -10,13 +10,10 @@ import {Link} from "react-router-dom";
 const Navbar = (props) => {
 
     const[mobiletask , setmobiletask] = useState(false);
-    let mobileTaskStyle ="hidden";
     const click =()=>{
         setmobiletask(!mobiletask);
-        console.log("on click work");       
-        
+        console.log("on click work");              
     }
-
     return (
         <div>
             <nav className="Navbar bg-skin-base-3 bg-opacity-20 flex justify-between shadow-sm">
@@ -45,10 +42,8 @@ const Navbar = (props) => {
                 <button onClick={click} className="flex lg:hidden float-right justify-center items-center ml-4 mr-4">
                     <FiMenu className={`${mobiletask ? "hidden" :""} transition `} size={30} opacity={'50%'}/>
                     <FiX className={`${mobiletask ? "" :"hidden"} transition `} size={30} opacity={'50%'}/>
-
                 </button>
-            </nav>
-                
+            </nav>                
             <div className={`bg-skin-base-3  bg-opacity-20 ${mobiletask ? "" :"hidden"}  flex flex-col gap-3 item-center justify-center shadow-sm`}>
                 <Link className=' text-center hover:text-skin-hover item-center w-[100%] cursor-pointer p-4 shadow-sm' to='/'>
                     Home
@@ -65,8 +60,7 @@ const Navbar = (props) => {
                 <Link className=' text-center hover:text-skin-hover item-center w-[100%] cursor-pointer p-3 shadow-sm' to='/'>
                     Community
                 </Link>
-            </div>
-    
+            </div>    
         </div>
     );
 }

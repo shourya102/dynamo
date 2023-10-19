@@ -7,6 +7,7 @@ import React, {useState} from "react";
 import SignUP from './pages/SignUp/SignUP';
 import SignIn from './pages/SignIn/SignIn';
 import Calendar from './components/Calendar/Calendar';
+import Problem from './components/ProblemStructure/Problem';
 
 function App() {
     const [theme, setTheme] = useState('');
@@ -26,6 +27,7 @@ function App() {
                     <Route path='/sign-up' element={<SignUP/>}/>
                     <Route path='/sign-in' element={<SignIn/>}/>
                     <Route path='/calendar' element={<Calendar/>}/>
+                    <Route path='/problemstructure'  element={<Problem/>}/>
 
 
 

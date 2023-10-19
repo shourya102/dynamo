@@ -8,7 +8,7 @@ export default function Calendar() {
   const [selectedYear,setSelectedYear] = useState( currentDate.getFullYear());
   const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth() + 1); 
   const [firstDateDay ,setFirstDateDay] = useState(new Date(selectedYear, selectedMonth-1,1).getDay())
-  const currentMonth =new Date().getMonth() + 1
+  const currentMonth =new Date().getMonth() + 1;
   const todayDate = currentDate.getDate();
     
   const goToPreviousMonth = () => {
@@ -76,18 +76,23 @@ export default function Calendar() {
                 <div className='grid grid-cols-7 gap-1 pt-0 pl-5 p-4 '>
                 {days.map((data)=>{
                     return(
-                  <p className={`inline-flex bg-skin-fill-2 w-9 rounded-full p-2 item-center justify-center`}>{data}</p>
+                  <p key={data} className={`inline-flex w-9 rounded-full p-2 item-center justify-center`}>{data}</p>
                     );
                 })}
 
-              {Object.keys(monthData).map((day) => (
-                
+              {Object.keys(monthData).map((day) => (                
               <a
                 key={day}
-                className="day "
-                href={monthData[day].link}
+                className={`${day>todayDate&&selectedYear==2023&&selectedMonth==currentMonth?"cursor-default":""}`}
+                
+                href={day>todayDate&&selectedYear==2023&&selectedMonth==currentMonth?"":monthData[day].link}
+                onClick={day>todayDate&&selectedYear==2023&&selectedMonth==currentMonth?(e)=>{
+                  e.preventDefault();
+                }:()=>{}}
+                
+                
               >
-                <p className={`inline-flex w-9 rounded-full p-2 item-center justify-center ${day==todayDate&&currentMonth==selectedMonth?"bg-skin-fill-3 text-white":"hover:bg-skin-fill-2"} `}>{monthData[day].date}</p>
+                <p className={`inline-flex w-9 rounded-full p-2 item-center justify-center ${day==todayDate&&currentMonth==selectedMonth?"bg-skin-fill-3 text-white":""} ${day>=todayDate&&selectedYear==2023&&selectedMonth==currentMonth?"":"hover:bg-skin-fill-2"} `}>{monthData[day].date}</p>
               </a>
             ))}
               </div>

@@ -19,7 +19,7 @@ const ToggleButton = (props) => {
         <div
             className={`ToggleButton w-20 h-14 bg-skin-fill-1 flex rounded-3xl items-center gap-2 p-1 ${props.className}`}>
             <button
-                className={`fix flex rounded-full bg-skin-fill-2 ${pos} transition-transform ease-in delay-100 shadow-sm`}
+                className={`fix flex rounded-full bg-skin-fill-2 ${pos} shadow-md transition-transform ease-in delay-100 `}
                 onClick={() => {
                     handleClick();
                     props.click();
