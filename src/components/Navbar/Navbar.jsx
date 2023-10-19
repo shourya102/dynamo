@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-import React, { useState } from 'react';
-import logo from './logo.png';
-import {FiMenu ,FiX} from "react-icons/fi";
-=======
 import React, {useState} from 'react';
 import logo from './logo.png'
 import {FiMenu, FiX} from "react-icons/fi";
->>>>>>> 01eb7749b61013a9117bc1415e10343a995c0812
 import './Navbar.css';
 import ToggleButton from "../ToggleButton/ToggleButton";
 import {NavbarList} from "./NavbarList";
@@ -45,14 +39,6 @@ const Navbar = (props) => {
                     <div className="bg-white rounded-full w-14 h-14"></div>
                 </div>
                 <button onClick={click} className="flex lg:hidden float-right justify-center items-center ml-4 mr-4">
-<<<<<<< HEAD
-                    <FiMenu className={`${mobiletask ? "hidden" :""} transition `} size={30} opacity={'50%'}/>
-                    <FiX className={`${mobiletask ? "" :"hidden"} transition `} size={30} opacity={'50%'}/>
-                </button>
-            </nav>                
-            <div className={`bg-skin-base-3  bg-opacity-20 ${mobiletask ? "" :"hidden"}  flex flex-col gap-3 item-center justify-center shadow-sm`}>
-                <Link className=' text-center hover:text-skin-hover item-center w-[100%] cursor-pointer p-4 shadow-sm' to='/'>
-=======
                     <FiMenu className={`${mobiletask ? "hidden" : ""} transition `} size={30} opacity={'50%'}/>
                     <FiX className={`${mobiletask ? "" : "hidden"} transition `} size={30} opacity={'50%'}/>
                 </button>
@@ -61,7 +47,6 @@ const Navbar = (props) => {
                 className={`bg-skin-base-3  bg-opacity-20 ${mobiletask ? "" : "hidden"}  flex flex-col gap-3 item-center justify-center shadow-sm`}>
                 <Link className=' text-center hover:text-skin-hover item-center w-[100%] cursor-pointer p-4 shadow-sm'
                       to='/'>
->>>>>>> 01eb7749b61013a9117bc1415e10343a995c0812
                     Home
                 </Link>
                 <Link className=' text-center hover:text-skin-hover item-center w-[100%] cursor-pointer p-3 shadow-sm'
@@ -80,11 +65,7 @@ const Navbar = (props) => {
                       to='/'>
                     Community
                 </Link>
-<<<<<<< HEAD
-            </div>    
-=======
             </div>
->>>>>>> 01eb7749b61013a9117bc1415e10343a995c0812
         </div>
     );
 }
