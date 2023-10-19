@@ -12,8 +12,6 @@ const Navbar = (props) => {
     const [mobiletask, setmobiletask] = useState(false);
     const click = () => {
         setmobiletask(!mobiletask);
-        console.log("on click work");
-
     }
 
     return (
@@ -37,7 +35,7 @@ const Navbar = (props) => {
                     </ul>
                 </div>
                 <div className="hidden lg:flex float-right justify-center items-center ml-4 mr-4 gap-3">
-                    <ToggleButton click={props.darkMode}/>
+                    <ToggleButton click={props.darkMode} theme={props.theme}/>
                     <div className="bg-white rounded-full w-14 h-14"></div>
                     <div className="bg-white rounded-full w-14 h-14"></div>
                 </div>

@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 .App {
-    background-image: linear-gradient(315deg, var(--fill-color-1) 0%, var(--fill-color-2) 74%);
+    background-image: var(--bg-grad-1);
     @apply text-skin-base antialiased
 }
