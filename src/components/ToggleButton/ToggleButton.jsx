@@ -4,8 +4,8 @@ import {BsFillMoonFill} from "react-icons/bs";
 import {FaSun} from "react-icons/fa";
 
 const ToggleButton = (props) => {
-    const [pos, setPos] = useState('');
-    const [isShown, setShown] = useState(false);
+    const [pos, setPos] = useState(() => props.theme === '' ? '': 'toggled');
+    const [isShown, setShown] = useState(() => props.theme !== '');
     const handleClick = () => {
         setPos(prevState => {
             return prevState === '' ? 'toggled' : '';
