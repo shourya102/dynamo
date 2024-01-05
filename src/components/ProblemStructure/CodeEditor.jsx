@@ -1,5 +1,5 @@
 import React from 'react'
-import ProblemDescriptio from './ProblemDescription/ProblemDescriptio';
+import ProblemDescription from './ProblemDescription/ProblemDescription';
 import {GrRefresh} from 'react-icons/gr'
 import {RxReset} from 'react-icons/rx'
 import { Link , useLocation } from 'react-router-dom';
@@ -15,11 +15,7 @@ export default function CodeEditor(props) {
                      
   return (
         <div>
-          <div>
-          </div>
-          <div className='flex  gap-2'>
-            <div >
-              
+            <div>
             </div>
             <ProblemDescriptio />
                       <div className={`w-[73%] flex flex-col gap-3 relative top-0 right-0` } style={cntstyle}>
@@ -36,10 +32,14 @@ export default function CodeEditor(props) {
                         <RxReset size={30}  opacity={'100%'}></RxReset>
                           <GrRefresh size={30} opacity={'60%'} />
                         </div>
-                    </div>
-                    <div>
 
                     </div>
+                    <div className='bg-skin-base-3 h-[29%]'>
+                        <div className='flex gap-4 p-2 ps-6 bg-skin-base-2'>
+                            <span className='ps-6'>TestCase</span>
+                            <span className='ps-6'>Result</span>
+
+                        </div>
 
                   </div>
                   <div className='bg-skin-base-2 h-[29%]'>
@@ -48,11 +48,9 @@ export default function CodeEditor(props) {
                       <span className='ps-6'>Result</span> 
                       
                     </div>
+                </div>
 
-                  </div>
-              </div>
-
-          </div>
+            </div>
         </div>
-  )
+    )
 }
