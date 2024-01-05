@@ -3,19 +3,19 @@ import axios from 'axios';
 const API_ENDPOINT = "http://localhost:8080/api/auth"
 
 class UserService {
-    signIn(userDetails){
+    signIn(userDetails) {
         return axios.post(API_ENDPOINT + "/signin", userDetails);
     }
 
-    signUp(userDetails){
+    signUp(userDetails) {
         return axios.post(API_ENDPOINT + "/signup", userDetails);
     }
 
-    logOut(){
+    logOut() {
         localStorage.removeItem("session");
     }
 
-    getCurrentUser(){
+    getCurrentUser() {
         return JSON.parse(localStorage.getItem("session"));
     }
 }

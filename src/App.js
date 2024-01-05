@@ -8,7 +8,7 @@ import React, {useEffect, useState} from "react";
 import SignIn from './pages/SignIn/SignIn';
 import Calendar from './components/Calendar/Calendar';
 import Problem from './components/ProblemStructure/Problem';
-import Problems from "./Problems/Problems";
+import Problems from "./pages/Problems/Problems";
 
 function App() {
     const [theme, setTheme] = useState(() => {
@@ -34,7 +34,7 @@ function App() {
                     {/*<Route path='/sign-up' element={<SignUp/>}/>*/}
                     <Route path='/sign-in' element={<SignIn/>}/>
                     <Route path='/calendar' element={<Calendar/>}/>
-                    <Route path='/problemstructure'  element={<Problem/>}/>
+                    <Route path='/problemstructure' element={<Problem/>}/>
                     <Route path='/problems' element={<Problems/>}/>
                 </Routes>
                 <Footer/>

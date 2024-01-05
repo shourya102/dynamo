@@ -41,6 +41,14 @@
     margin: 0;
 }
 
+textarea:focus, input:focus {
+    outline: none;
+}
+
+*:focus {
+    outline: none;
+}
+
 body {
     width: 100vw;
     height: 100vh;

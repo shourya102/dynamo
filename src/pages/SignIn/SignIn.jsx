@@ -22,7 +22,8 @@ export default function SignIn() {
 
     return (
         <div className='SignIn flex justify-center items-center'>
-            <div className='fixb flex flex-col items-center w-5/6 md:w-3/4 lg:w-1/3 shadow-md  bg-skin-base-3 rounded-3xl'>
+            <div
+                className='fixb flex flex-col items-center w-5/6 md:w-3/4 lg:w-1/3 shadow-md  bg-skin-base-3 rounded-3xl'>
                 <div className='p-9 w-full'>
                     <h1 className=' text-title text-center font-semibold my-7'>Welcome back!</h1>
                     <form className='flex gap-3 flex-col' method='POST' action="">
