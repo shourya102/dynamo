@@ -54,7 +54,7 @@ const Navbar = (props) => {
                     Sign in
                 </Link>
                 <Link className=' text-center hover:text-skin-hover item-center w-[100%] cursor-pointer p-3 shadow-sm'
-                      to='/'>
+                      to='/problems'>
                     Problem
                 </Link>
                 <Link className=' text-center hover:text-skin-hover item-center w-[100%] cursor-pointer p-3 shadow-sm'

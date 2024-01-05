@@ -7,7 +7,10 @@ import React, {useEffect, useState} from "react";
 import SignUp from './pages/SignUp/SignUp';
 import SignIn from './pages/SignIn/SignIn';
 import Calendar from './components/Calendar/Calendar';
-import Problem from './components/ProblemStructure/Problem';
+// import Problem from './components/ProblemStructure/Problem';
+import Problem from './Problems/Problem.jsx';
+import CodeEditor from './components/ProblemStructure/CodeEditor.jsx';
+
 
 function App() {
     const [theme, setTheme] = useState(() => {
@@ -30,14 +33,11 @@ function App() {
                 <Navbar darkMode={darkMode} theme={theme}/>
                 <Routes>
                     <Route path='/' element={<Home/>}/>
-                    <Route path='/sign-up' element={<SignUp/>}/>
+                    <Route path='/sign-up' element={<SignUp/>}/> 
                     <Route path='/sign-in' element={<SignIn/>}/>
                     <Route path='/calendar' element={<Calendar/>}/>
-                    <Route path='/problemstructure'  element={<Problem/>}/>
-
-
-
-                    
+                    <Route path='/problems'  element={<Problem/>}/>  
+                    <Route  path='/code-editor'  element={<CodeEditor/>}/>                
 
                 </Routes>
                 <Footer/>

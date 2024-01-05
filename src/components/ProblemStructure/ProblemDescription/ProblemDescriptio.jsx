@@ -2,23 +2,24 @@ import React from 'react'
 
 export default function ProblemDescriptio() {
     const cntstyle = {  height: `${870.875}px`};
+   
   return (
     
-      <div className='w-[35%] bg-skin-base-3 relative top-0 left-0  pb-0  overflow-y-auto scroll-smooth' 
+      <div className='w-[35%] c relative top-0 left-0  pb-0  overflow-y-auto scroll-smooth' 
         style={cntstyle}
         >
-          <div className='p-4 snap-y'>
+          <div className='p-4  pt-0  snap-y'>
           <div className='flex '>
 
           </div>
-          <div className='flex p-3   justify-between'>
+          <div className='flex text-paragraph p-3  mt-2 t-3 px-4 w-[100%] bg-skin-base-3  justify-between'>
             <div className='inline'>
-            <span className='text-2xl pr-5'>1</span>
-            <span className='text-2xl'>Two sum</span>
+            <span className=' pr-5'>1</span>
+            <span className=''>Two sum</span>
             </div>
-            <span className='text-2xl'>solved</span>
+            <span className=''>solved</span>
           </div>
-        <div className=' m-2 mb-16 overflow-auto scroll-smooth' >
+        <div class="flex bg-skin-base-3 mt-2 w-full flex-1 flex-col gap-4 overflow-y-auto px-4 py-5" >
 
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto hic modi iure tenetur provident odio omnis asperiores maiores. Consectetur tempore non nulla cum aut assumenda quisquam a aliquam id quia possimus nesciunt, dolore explicabo ipsum molestias esse dolores optio. Id sint eum laboriosam facilis perferendis soluta amet voluptatum necessitatibus, nihil minus. Praesentium laborum facilis sapiente odit, alias dicta facere totam id architecto impedit exercitationem nesciunt rerum officiis possimus cum velit libero voluptatum dignissimos explicabo, perferendis veniam numquam! Dignissimos accusamus, 
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores aliquam accusantium molestias deleniti minima consequatur saepe ad, excepturi praesentium laborum aperiam doloribus voluptas magni illum aspernatur veritatis incidunt? Ipsam, obcaecati!
@@ -52,20 +53,21 @@ export default function ProblemDescriptio() {
           <div className='left-0 bottom-0 sticky flex justify-between bg-skin-base-2 p-3 w-[100%]'>
               <div>
                 <span>
-                Accepted 
-                <span>34.9M</span>
+                <span className='text-[12px]'>Accepted   </span>              
+              
+                <span className='pl-1'>34.9M</span>
                 </span>
               </div>
               <div>
                 <span>
-                Submissions 
-                <span>21.9M</span>
+                <span className='text-[12px]'>Submissions   </span>                 
+                <span className='pl-1'>21.9M</span>
                 </span>
               </div>
               <div>
-                <span>
-                Acceptance Rate 
-                <span>41.9M</span>
+                <span >
+                <span className='text-[12px]'>Acceptance Rate  </span>
+                <span className='pl-1'>41.9M</span>
                 </span>
               </div>
           </div>
