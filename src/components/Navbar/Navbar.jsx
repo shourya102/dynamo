@@ -5,6 +5,7 @@ import './Navbar.css';
 import ToggleButton from "../ToggleButton/ToggleButton";
 import {NavbarList} from "./NavbarList";
 import {Link} from "react-router-dom";
+import ProfileDropdown from "../ProfileDropdown/ProfileDropdown";
 
 
 const Navbar = (props) => {
@@ -36,7 +37,7 @@ const Navbar = (props) => {
                 <div className="hidden lg:flex float-right justify-center items-center ml-4 mr-4 gap-3">
                     <ToggleButton click={props.darkMode} theme={props.theme}/>
                     <div className="bg-white rounded-full w-14 h-14"></div>
-                    <div className="bg-white rounded-full w-14 h-14"></div>
+                    <ProfileDropdown/>
                 </div>
                 <button onClick={click} className="flex lg:hidden float-right justify-center items-center ml-4 mr-4">
                     <FiMenu className={`${mobiletask ? "hidden" : ""} transition `} size={30} opacity={'50%'}/>

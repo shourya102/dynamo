@@ -9,6 +9,7 @@ import SignIn from './pages/SignIn/SignIn';
 import Calendar from './components/Calendar/Calendar';
 import CodeEditor from './components/ProblemStructure/CodeEditor.jsx';
 import Problems from "./pages/Problems/Problems";
+import Profile from "./pages/Profile/Profile";
 
 
 function App() {
@@ -32,12 +33,12 @@ function App() {
                 <Navbar darkMode={darkMode} theme={theme}/>
                 <Routes>
                     <Route path='/' element={<Home/>}/>
-                    <Route path='/sign-up' element={<SignUp/>}/> 
+                    <Route path='/sign-up' element={<SignUp/>}/>
                     <Route path='/sign-in' element={<SignIn/>}/>
                     <Route path='/calendar' element={<Calendar/>}/>
-                    <Route path='/problems'  element={<Problems/>}/>
-                    <Route  path='/code-editor'  element={<CodeEditor/>}/>                
-
+                    <Route path='/problems' element={<Problems/>}/>
+                    <Route path='/code-editor' element={<CodeEditor/>}/>
+                    <Route path='/profile' element={<Profile/>}/>
                 </Routes>
                 <Footer/>
             </Router>

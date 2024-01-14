@@ -1,11 +1,8 @@
 table, th, td {
     padding: 15px;
     border-collapse: collapse;
-  }
-  table{
-    margin: 30px;
-  }
+}
 
-  tr:nth-child(odd) {
+tr:nth-child(odd) {
     background-color: var(--fill-in-2);
-  }
+}

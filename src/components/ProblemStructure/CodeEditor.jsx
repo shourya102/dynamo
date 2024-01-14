@@ -54,5 +54,5 @@ export default function CodeEditor(props) {
                 </div>
             </div>
         </div>
-            );
+    );
 }

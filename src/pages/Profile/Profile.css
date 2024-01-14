@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.border-down {
+    border-bottom: 1px solid var(--border-color-2);
+}
