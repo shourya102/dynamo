@@ -9,6 +9,8 @@ import SignIn from './pages/SignIn/SignIn';
 import Calendar from './components/Calendar/Calendar';
 import CodeEditor from './components/ProblemStructure/CodeEditor.jsx';
 import Problems from "./pages/Problems/Problems";
+import Contest from './pages/Contest/Contest.jsx';
+import Solution from './pages/Solution/Solution.jsx';
 
 
 function App() {
@@ -36,7 +38,9 @@ function App() {
                     <Route path='/sign-in' element={<SignIn/>}/>
                     <Route path='/calendar' element={<Calendar/>}/>
                     <Route path='/problems'  element={<Problems/>}/>
-                    <Route  path='/code-editor'  element={<CodeEditor/>}/>                
+                    <Route  path='/code-editor'  element={<CodeEditor/>}/> 
+                    <Route path='/contest' element ={<Contest/>}/>  
+                    <Route path='/solution' element ={<Solution/>}/>             
 
                 </Routes>
                 <Footer/>
