@@ -11,6 +11,8 @@
         --text-color-hover: rgb(38, 38, 38);
         --fill-color-1: #f5e3e6;
         --fill-color-2: #d9e4f5;
+        --fill-color-4: #bedbf241;
+
         --bg-grad-1: linear-gradient(315deg, var(--fill-color-1) 0%, var(--fill-color-2) 74%);
         --fill-color-3: rgb(255, 255, 255, 0.2);
         --fill-in-1: rgb(200, 200, 200, 0.2);
@@ -25,6 +27,7 @@
         --text-color-hover: rgb(255, 255, 255);
         --fill-color-1: #111;
         --fill-color-2: #333;
+        --fill-color-4: #2b2b2b;
         --bg-grad-1: linear-gradient(315deg, var(--fill-color-1) 0%, var(--fill-color-2) 74%);;
         --fill-color-3: rgb(55, 65, 81, 0.2);
         --fill-in-1: rgb(100, 100, 100, 0.2);
