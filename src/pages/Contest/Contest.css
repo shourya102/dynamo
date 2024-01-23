@@ -1,14 +1,15 @@
 table, th, td {
     padding: 20px;
     border-collapse: collapse;
-  }
- 
-  tr:nth-child(even) {
+}
+
+tr:nth-child(even) {
     background-color: var(--fill-in-2);
 
-  }
-  tr{
+}
+
+tr {
     width: 100%;
-    
-  }
+
+}
  

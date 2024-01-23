@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 
-export default function Card(props) {
-    const cardStyle = {
-        padding: `${props.padding}px`,
-    };
+const Card = (props) => {
+  return (
+    <div
+      className={`${props.className} flex flex-col rounded-2xl border border-skin-border-2 space-y-2 bg-skin-base-3 p-6 w-full`}
+    >
+      {props.children}
+    </div>
+  );
+};
 
-    return (
-        <div className=" inline-flex bg-skin-base-2  border-1 border-skin-border-1 border-solid rounded-md  "
-             style={cardStyle}>
-        </div>
-    )
-}
+export default Card;

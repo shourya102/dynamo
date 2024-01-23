@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.top-btn {
+    background: linear-gradient(to bottom, #cfd8e4, #e2eaf6);
+}
+
+.min {
+    min-width: 1.75rem;
+}

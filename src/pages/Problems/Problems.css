@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.set-min {
+    min-width: 13rem;
+}
+
+.scrollbar {
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+}
+
+.scrollbar-item {
+    scroll-snap-align: center;
+}

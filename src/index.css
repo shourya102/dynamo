@@ -8,32 +8,42 @@
 @layer base {
     :root {
         --text-color: rgb(115, 115, 115);
+        --text-bright: rgb(25, 25, 25);
+        --text-bright-rev: rgb(225, 225, 225);
         --text-color-hover: rgb(38, 38, 38);
         --fill-color-1: #f5e3e6;
         --fill-color-2: #d9e4f5;
-        --fill-color-4: #bedbf241;
-
-        --bg-grad-1: linear-gradient(315deg, var(--fill-color-1) 0%, var(--fill-color-2) 74%);
         --fill-color-3: rgb(255, 255, 255, 0.2);
+        --fill-color-4: #bedbf241;
+        --fill-bright: rgb(80, 80, 80);
+        --bg-grad-1: linear-gradient(315deg, var(--fill-color-1) 0%, var(--fill-color-2) 74%);
         --fill-in-1: rgb(200, 200, 200, 0.2);
         --fill-in-2: rgb(125, 125, 125, 0.2);
-        --fill-in-3: #5272F2;
+        --fill-in-2-solid: rgb(215, 215, 215);
         --border-color-1: #ddd;
         --border-color-2: #ccc;
+        --border-color-3: rgb(180, 180, 180);
+        --border-color-4: rgb(100, 100, 100);
     }
 
     .theme-dark {
         --text-color: rgb(175, 175, 175);
+        --text-bright: rgb(225, 225, 225);
+        --text-bright-rev: rgb(25, 25, 25);
         --text-color-hover: rgb(255, 255, 255);
         --fill-color-1: #111;
         --fill-color-2: #333;
-        --fill-color-4: #2b2b2b;
-        --bg-grad-1: linear-gradient(315deg, var(--fill-color-1) 0%, var(--fill-color-2) 74%);;
         --fill-color-3: rgb(55, 65, 81, 0.2);
+        --fill-color-4: #2b2b2b;
+        --fill-bright: rgb(200, 200, 200);
+        --bg-grad-1: linear-gradient(315deg, var(--fill-color-1) 0%, var(--fill-color-2) 74%);;
         --fill-in-1: rgb(100, 100, 100, 0.2);
         --fill-in-2: rgb(10, 10, 10, 0.2);
+        --fill-in-2-solid: rgb(40, 40, 40);
         --border-color-1: #333;
         --border-color-2: #555;
+        --border-color-3: rgb(155, 155, 155);
+        --border-color-4: rgb(40, 40, 40);
     }
 }
 
@@ -51,9 +61,33 @@ textarea:focus, input:focus {
     outline: none;
 }
 
+a {
+    text-decoration-style: solid;
+}
+
+ul, li {
+    list-style: none;
+}
+
 body {
     width: 100vw;
     height: 100vh;
     font-family: 'Inter', sans-serif;
     background-color: #d9e4f5;
+}
+
+.border-bot {
+    border-bottom: 1px solid var(--border-color-2);
+}
+
+.border-top {
+    border-top: 1px solid var(--border-color-2);
+}
+
+.bg-transition {
+    transition: background-color 0.25s ease-in-out;
+}
+
+.width-transition {
+    transition: width 0.3s ease-in-out;
 }
