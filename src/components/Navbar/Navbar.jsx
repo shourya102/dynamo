@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "./logo.png";
 import { FiMenu, FiX } from "react-icons/fi";
 import "./Navbar.css";
@@ -6,9 +6,20 @@ import ToggleButton from "../ToggleButton/ToggleButton";
 import { NavbarList } from "./NavbarList";
 import { Link } from "react-router-dom";
 import ProfileDropdown from "../ProfileDropdown/ProfileDropdown";
+import userService from "../../services/UserService";
 
 const Navbar = (props) => {
   const [mobiletask, setmobiletask] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  useEffect(() => {
+    if (userService.getCurrentUser()) {
+      setLoggedIn(true);
+    } else {
+      setLoggedIn(false);
+    }
+  }, []);
+
   const click = () => {
     setmobiletask(!mobiletask);
   };
@@ -37,8 +48,24 @@ const Navbar = (props) => {
         </div>
         <div className="hidden lg:flex float-right justify-center items-center ml-4 mr-4 gap-3">
           <ToggleButton click={props.darkMode} theme={props.theme} />
-          <div className="bg-white rounded-full w-14 h-14"></div>
-          <ProfileDropdown />
+          {loggedIn && <ProfileDropdown setLoggedIn={setLoggedIn} />}
+          {!loggedIn && (
+            <div className="space-x-2">
+              <Link
+                to={"/sign-in"}
+                className="bg-skin-fill-1 p-4 shadow-sm rounded-2xl border border-skin-border-1"
+              >
+                <span>Login</span>
+              </Link>
+              <span>or</span>
+              <Link
+                to={"/sign-up"}
+                className="bg-skin-fill-1 p-4 shadow-sm rounded-2xl border border-skin-border-1"
+              >
+                <span>Register</span>
+              </Link>
+            </div>
+          )}
         </div>
         <button
           onClick={click}

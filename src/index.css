@@ -63,6 +63,7 @@ textarea:focus, input:focus {
 
 a {
     text-decoration-style: solid;
+    user-select: none;
 }
 
 ul, li {
@@ -74,6 +75,10 @@ body {
     height: 100vh;
     font-family: 'Inter', sans-serif;
     background-color: #d9e4f5;
+}
+
+span {
+    user-select: none;
 }
 
 .border-bot {

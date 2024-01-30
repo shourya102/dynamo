@@ -68,7 +68,7 @@ const ProblemEditor = () => {
     ProblemService.createProblem({
       name: problemName,
       difficulty: difficulty,
-      description: problemDescription,
+      problemDescription: problemDescription,
       returnType: returnType,
       methodName: methodName,
       parameterNames: parameterNames,
@@ -78,10 +78,10 @@ const ProblemEditor = () => {
   };
 
   useEffect(() => {
-    // This useEffect will run whenever parametersList changes
     setParameterNames(parametersList.map((i) => i.name));
-    setParameterTypes(parametersList.map((i) => i.type));
-  }, [parametersList]);
+    setParameterTypes(parametersList.map((i) => i.type.toUpperCase()));
+    console.log(problemDescription.toString());
+  }, [parametersList, problemDescription]);
 
   const updateParameters = (id, updatedItem) => {
     setParametersList((prevState) => {

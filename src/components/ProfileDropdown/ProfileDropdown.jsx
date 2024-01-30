@@ -6,8 +6,10 @@ import { BsPerson } from "react-icons/bs";
 import { AiOutlineQuestion } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { BiLogOut } from "react-icons/bi";
+import tokenService from "../../services/TokenService";
+import userService from "../../services/UserService";
 
-const ProfileDropdown = () => {
+const ProfileDropdown = (props) => {
   const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
   const clickedProfile = () => {
@@ -29,14 +31,15 @@ const ProfileDropdown = () => {
         "cursor-pointer flex items-center space-x-1 p-2 rounded-lg hover:bg-skin-base-2 hover:bg-opacity-50",
       nav: "/",
     },
-    {
-      name: "Log Out",
-      icon: <BiLogOut />,
-      style:
-        "cursor-pointer flex items-center space-x-1 p-2 rounded-lg hover:bg-skin-base-2 hover:bg-opacity-50",
-      nav: "/",
-    },
   ];
+
+  const logout = () => {
+    if (userService.getCurrentUser()) {
+      userService.logOut(userService.getCurrentUser().id);
+      props.setLoggedIn(false);
+      navigate("/");
+    }
+  };
 
   return (
     <div className="flex flex-col">
@@ -67,6 +70,13 @@ const ProfileDropdown = () => {
               </button>
             );
           })}
+          <button
+            className="cursor-pointer flex items-center space-x-1 p-2 rounded-lg hover:bg-skin-base-2 hover:bg-opacity-50"
+            onClick={logout}
+          >
+            <div>Log out</div>
+            <BiLogOut />
+          </button>
         </div>
       </CSSTransition>
     </div>

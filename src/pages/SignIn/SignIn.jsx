@@ -8,6 +8,7 @@ import { IconContext } from "react-icons";
 import { Link, useNavigate } from "react-router-dom";
 import "./SignIn.css";
 import UserService from "../../services/UserService";
+import userService from "../../services/UserService";
 
 export default function SignIn() {
   const [username, setUsername] = useState("");
@@ -16,14 +17,8 @@ export default function SignIn() {
   const navigate = useNavigate();
   const signIn = (e) => {
     e.preventDefault();
-    UserService.signIn({ username, password })
-      .then((response) => {
-        localStorage.setItem("session", JSON.stringify(response.data));
-        navigate("/");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    userService.signIn({ username, password });
+    if (userService.getCurrentUser()) navigate("/");
   };
 
   return (
