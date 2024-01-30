@@ -7,7 +7,6 @@ import {
 import { IconContext } from "react-icons";
 import { Link, useNavigate } from "react-router-dom";
 import "./SignIn.css";
-import UserService from "../../services/UserService";
 import userService from "../../services/UserService";
 
 export default function SignIn() {

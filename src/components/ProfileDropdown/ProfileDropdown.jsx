@@ -6,7 +6,6 @@ import { BsPerson } from "react-icons/bs";
 import { AiOutlineQuestion } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { BiLogOut } from "react-icons/bi";
-import tokenService from "../../services/TokenService";
 import userService from "../../services/UserService";
 
 const ProfileDropdown = (props) => {
@@ -47,7 +46,7 @@ const ProfileDropdown = (props) => {
         onClick={clickedProfile}
         className="bg-white bg-opacity-50 overflow-clip rounded-full h-14 w-14"
       >
-        <img src={testpic} />
+        <img src={testpic} alt="profilepic" />
       </button>
       <CSSTransition
         in={isVisible}
@@ -63,7 +62,7 @@ const ProfileDropdown = (props) => {
               <button
                 key={id}
                 className={item.style}
-                onClick={(event) => navigate(item.nav)}
+                onClick={() => navigate(item.nav)}
               >
                 <div>{item.name}</div>
                 {item.icon}
