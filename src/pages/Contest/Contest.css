@@ -1,15 +1,40 @@
+
+.table-container {
+    overflow-x: auto;
+  }
+  
+  .responsive-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px; /* Add margin for better spacing on smaller screens */
+  }
+  
+  .responsive-table th, .responsive-table td {
+    /* border: 1px solid #ddd; */
+    padding: 8px;
+    text-align: left;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .responsive-table th, .responsive-table td {
+      font-size: 12px;
+    }
+    .winner{
+      font-size: 12px;
+    }
+  }
+
+
+
 table, th, td {
-    padding: 20px;
+    padding: 15px;
     border-collapse: collapse;
 }
 
-tr:nth-child(even) {
+tr:nth-child(odd) {
     background-color: var(--fill-in-2);
-
-}
-
-tr {
-    width: 100%;
-
 }
  
+table tr td{
+    text-align: center;
+}

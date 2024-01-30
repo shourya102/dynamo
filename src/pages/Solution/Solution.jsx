@@ -2,6 +2,7 @@ import React from "react";
 import ToggleableComponent from "./ToggleableComponent";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import Card from "../../components/Card/Card";
 
 export default function Solution() {
   return (
@@ -119,7 +120,7 @@ export default function Solution() {
             </div>
           </ToggleableComponent>
           <ToggleableComponent title="Code">
-            <SyntaxHighlighter language="cpp" style={atomDark}>
+            <SyntaxHighlighter language="cpp"  style={atomDark}>
               {`
             class Student{  
                 int id;  
@@ -145,30 +146,34 @@ export default function Solution() {
           </ToggleableComponent>
         </ToggleableComponent>
         <ToggleableComponent title="Comment">
-          <div className="flex flex-col justify-center items-center ">
-            <div className="flex flex-col justify-center w-[70%] shadow-md bg-skin-base-4 rounded-2xl p-6 items-center">
-              <div className="w-[85%]  rounded-lg  h-[12rem] ">
-                <textarea
-                  cols={50}
-                  rows={14}
-                  type="text"
-                  className="h-[70%] bg-skin-base-3 resize-none shadow-lg w-[100%] rounded-2xl  p-4"
-                  placeholder="Comment here"
-                  name=""
-                  id=""
-                />
-                <div className=" h-[20%] w-[100%] flex flex-row md:justify-end pr-3 items-center">
-                  <button className="p-2 px-3 rounded-2xl text-black bg-white">
-                    Comment
-                  </button>
-                </div>
+          <Card>
+              <div className="flex flex-col justify-center items-center ">
+              
+                  <div className="flex flex-col justify-center md:w-[70%]  w-[100%]  items-center">
+                      
+                        <div className=" flex  w-[100%]  rounded-lg  h-[12rem] ">
+                          <div className="flex  justify-center items-center flex-col w-[100%]">
+                          <textarea
+                            cols={50}
+                            rows={14}
+                            type="text"
+                            className="h-[70%] bg-skin-base-3 resize-none shadow-sm w-[100%] rounded-2xl  p-4"
+                            placeholder="Comment here"
+                            name=""
+                            id=""
+                          />
+                          <div className="  w-[100%] my-2 ">
+                            <button className="p-2 px-2  mx-1 rounded-2xl text-black float-right bg-white">
+                              Comment
+                            </button>
+                          </div>
+                          </div>
+                        </div>
+                       
+                  </div>
+                
               </div>
-              <div>
-                <div></div>
-                <div></div>
-              </div>
-            </div>
-          </div>
+          </Card>
         </ToggleableComponent>
       </div>
     </div>

@@ -8,7 +8,7 @@ export default function ToggleableComponent(props) {
     setToggle(!toggle);
   };
   return (
-    <div className="border-[.1px] border-skin-border-2  mt-5 bg-skin-base-3 rounded-2xl  shadow-md">
+    <div className="border-[.1px] border-skin-border-2  mt-5 bg-skin-base-3 rounded-2xl  shadow-sm">
       <div className="p-4 px-6  text-[1.5rem]   flex flex-row justify-between">
         <span>{props.title}</span>
         <span className="cursor-pointer" onClick={toggleFunction}>
@@ -18,7 +18,7 @@ export default function ToggleableComponent(props) {
         </span>
       </div>
       <div className="">
-        {toggle && <div className="p-3 pb-5">{props.children}</div>}
+        {toggle && <div className="p-5">{props.children}</div>}
       </div>
     </div>
   );

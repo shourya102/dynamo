@@ -30,7 +30,7 @@ module.exports = {
           "fill-1": "var(--fill-in-1)",
           "fill-2": "var(--fill-in-2)",
           "fill-2-solid": "var(--fill-in-2-solid)",
-          bright: "var(--fill-bright)",
+          "bright": "var(--fill-bright)",
         },
       },
       gradientColorStops: {
