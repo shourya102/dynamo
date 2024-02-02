@@ -137,13 +137,13 @@ const ProblemEditor = () => {
       <div className="items-center space-y-2 text-paragraph w-full sm:w-5/6 md:w-2/3 lg:w-1/2 flex flex-col">
         <div className="w-full flex items-center">
           <div
-            className={`${tabSelected === 1 ? "border-blue-600" : "border-skin-border-3"} transition-colors delay-100 ease-linear flex-grow border-2 `}
+            className={`${tabSelected === 1 ? "border-slate-600" : "border-skin-border-3"} transition-colors delay-100 ease-linear flex-grow border-2 `}
           ></div>
           <div
-            className={`${tabSelected === 2 ? "border-blue-600" : "border-skin-border-3"} transition-colors delay-100 ease-linear flex-grow border-2`}
+            className={`${tabSelected === 2 ? "border-slate-600" : "border-skin-border-3"} transition-colors delay-100 ease-linear flex-grow border-2`}
           ></div>
           <div
-            className={`${tabSelected === 3 ? "border-blue-600" : "border-skin-border-3"} transition-colors delay-100 ease-linear flex-grow border-2`}
+            className={`${tabSelected === 3 ? "border-slate-600" : "border-skin-border-3"} transition-colors delay-100 ease-linear flex-grow border-2`}
           ></div>
         </div>
         {tabSelected === 1 && (
@@ -195,6 +195,7 @@ const ProblemEditor = () => {
               <Search
                 value={searchTerm}
                 onChange={handleSearch}
+                onClear={() => setSearchTerm("")}
                 placeholder="Search a topic"
                 type="text"
                 p={2}
@@ -344,7 +345,7 @@ const ProblemEditor = () => {
                   if (prevState > 0) return prevState - 1;
                 })
               }
-              className="bg-transition hover:bg-skin-fill-2 flex justify-center my-6  w-36 bg-skin-base-3 border border-skin-border-2 shadow-sm p-4 rounded-full"
+              className="bg-transition hover:bg-slate-600 flex justify-center my-2  w-36 bg-slate-700 text-gray-200 shadow-sm p-4 rounded-full"
             >
               <BiLeftArrowCircle size={25} />
             </button>
@@ -356,7 +357,7 @@ const ProblemEditor = () => {
                   if (prevState <= 3) return prevState + 1;
                 })
               }
-              className="bg-transition hover:bg-skin-fill-2 flex justify-center my-6  w-36 bg-skin-base-3 border border-skin-border-2 shadow-sm p-4 rounded-full"
+              className="bg-transition hover:bg-slate-600 flex justify-center my-2  w-36 bg-slate-700 text-gray-200 shadow-sm p-4 rounded-full"
             >
               <BiRightArrowCircle size={25} />
             </button>
@@ -364,7 +365,7 @@ const ProblemEditor = () => {
           {tabSelected === 3 && (
             <button
               onClick={handleSubmit}
-              className="bg-transition space-x-1 items-center hover:bg-skin-fill-2 flex justify-center my-6  w-36 bg-skin-base-3 border border-skin-border-2 shadow-sm p-4 rounded-full"
+              className="bg-transition hover:bg-slate-600 space-x-1 items-center flex justify-center my-2  w-36 bg-slate-700 text-gray-200 shadow-sm p-4 rounded-full"
             >
               <span>Create</span>
               <AiFillCaretRight />
