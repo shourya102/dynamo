@@ -9,3 +9,26 @@
 .min {
     min-width: 1.75rem;
 }
+
+.pop-out-enter {
+    transform: scale(0.9);
+    opacity: 0.5;
+}
+
+.pop-out-enter-active {
+    transform: scale(1);
+    opacity: 1;
+    transition: opacity 300ms, transform 300ms;
+}
+
+.pop-out-exit {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.pop-out-exit-active {
+    transform: scale(0.9);
+    opacity: 0.5;
+    transition: opacity 300ms, transform 300ms;
+}
+
