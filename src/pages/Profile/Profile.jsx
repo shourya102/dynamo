@@ -23,11 +23,7 @@ const Profile = () => {
     <div className="flex w-full h-[53.5rem] justify-center items-center">
       <div className="flex flex-col rounded-2xl bg-skin-base-3 w-5/6 h-5/6 p-5 border-skin-border-1 shadow-sm">
         <div className="flex border-down pb-5 space-x-5 justify-center items-center">
-          <img
-            className="rounded-full w-44"
-            src={flower}
-            alt="profile-picture"
-          />
+          <img className="rounded-full w-44" src={flower} alt="profile" />
           <div className="flex flex-col space-y-2">
             <div className="font-varela font-bold text-semi">Shourya Sahu</div>
             <TextBox length={charLength}>

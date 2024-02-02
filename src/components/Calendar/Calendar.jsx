@@ -26,7 +26,7 @@ export default function Calendar() {
   };
 
   const goToNextMonth = () => {
-    if (selectedMonth == 12) {
+    if (selectedMonth === 12) {
       setSelectedMonth(1);
       setSelectedYear(selectedYear + 1);
     } else if (selectedMonth < currentMonth) {
@@ -47,12 +47,12 @@ export default function Calendar() {
         <div className="flex  p-4 pt-9 justify-between items-center   ">
           <button
             onClick={goToPreviousMonth}
-            disabled={selectedYear == 2023 && selectedMonth == 1 ? true : false}
+            disabled={selectedYear === 2023 && selectedMonth === 1}
           >
             <FiChevronLeft
               size={30}
               opacity={
-                selectedYear == 2023 && selectedMonth == 1 ? "40%" : "120%"
+                selectedYear === 2023 && selectedMonth === 1 ? "40%" : "120%"
               }
             ></FiChevronLeft>
           </button>
@@ -65,11 +65,11 @@ export default function Calendar() {
           </div>
           <button
             onClick={goToNextMonth}
-            disabled={currentMonth == selectedMonth ? true : false}
+            disabled={currentMonth === selectedMonth}
           >
             <FiChevronRight
               size={30}
-              opacity={currentMonth == selectedMonth ? "40%" : "120%"}
+              opacity={currentMonth === selectedMonth ? "40%" : "120%"}
             ></FiChevronRight>
           </button>
         </div>
@@ -101,18 +101,18 @@ export default function Calendar() {
               {Object.keys(monthData).map((day) => (
                 <a
                   key={day}
-                  className={`${day > todayDate && selectedYear == 2023 && selectedMonth == currentMonth ? "cursor-default" : ""}`}
+                  className={`${day > todayDate && selectedYear === 2023 && selectedMonth === currentMonth ? "cursor-default" : ""}`}
                   href={
                     day > todayDate &&
-                    selectedYear == 2023 &&
-                    selectedMonth == currentMonth
+                    selectedYear === 2023 &&
+                    selectedMonth === currentMonth
                       ? ""
                       : monthData[day].link
                   }
                   onClick={
                     day > todayDate &&
-                    selectedYear == 2023 &&
-                    selectedMonth == currentMonth
+                    selectedYear === 2023 &&
+                    selectedMonth === currentMonth
                       ? (e) => {
                           e.preventDefault();
                         }
@@ -120,7 +120,7 @@ export default function Calendar() {
                   }
                 >
                   <p
-                    className={`inline-flex w-9 rounded-full p-2 item-center justify-center ${day == todayDate && currentMonth == selectedMonth ? "bg-skin-fill-3 text-white" : ""} ${day >= todayDate && selectedYear == 2023 && selectedMonth == currentMonth ? "" : "hover:bg-skin-fill-2"} `}
+                    className={`inline-flex w-9 rounded-full p-2 item-center justify-center ${day === todayDate && currentMonth === selectedMonth ? "bg-skin-fill-3 text-white" : ""} ${day >= todayDate && selectedYear === 2023 && selectedMonth === currentMonth ? "" : "hover:bg-skin-fill-2"} `}
                   >
                     {monthData[day].date}
                   </p>

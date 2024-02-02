@@ -53,14 +53,14 @@ const Navbar = (props) => {
             <div className="space-x-2">
               <Link
                 to={"/sign-in"}
-                className="bg-skin-fill-1 p-4 shadow-sm rounded-2xl border border-skin-border-1"
+                className="bg-skin-fill-1 p-4 shadow-sm rounded-3xl border border-skin-border-1"
               >
                 <span>Login</span>
               </Link>
               <span>or</span>
               <Link
                 to={"/sign-up"}
-                className="bg-skin-fill-1 p-4 shadow-sm rounded-2xl border border-skin-border-1"
+                className="bg-skin-fill-1 p-4 shadow-sm rounded-3xl border border-skin-border-1"
               >
                 <span>Register</span>
               </Link>

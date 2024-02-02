@@ -7,20 +7,20 @@ import {
 } from "react-icons/bi";
 import { IconContext } from "react-icons";
 
-const Footer = (props) => {
+const Footer = () => {
   return (
     <div className="Footer h-40 flex justify-center bg-skin-base-3 bg-opacity-20 footer-border">
       <div className="w-[80%] p-4 flex flex-col items-center gap-4">
         <div>Copyright &#169; 2023 Dynamo</div>
         <div className="w-full flex justify-center p-4 add-top gap-5">
           <IconContext.Provider value={{ size: "30" }}>
-            <a href="#">
+            <a href="/">
               <BiLogoFacebook />
             </a>
-            <a href="#">
+            <a href="/">
               <BiLogoLinkedin />
             </a>
-            <a href="#">
+            <a href="/">
               <BiLogoInstagram />
             </a>
           </IconContext.Provider>
