@@ -120,7 +120,7 @@ export default function Solution() {
             </div>
           </ToggleableComponent>
           <ToggleableComponent title="Code">
-            <SyntaxHighlighter language="cpp"  style={atomDark}>
+            <SyntaxHighlighter language="cpp" style={atomDark}>
               {`
             class Student{  
                 int id;  
@@ -147,32 +147,28 @@ export default function Solution() {
         </ToggleableComponent>
         <ToggleableComponent title="Comment">
           <Card>
-              <div className="flex flex-col justify-center items-center ">
-              
-                  <div className="flex flex-col justify-center md:w-[70%]  w-[100%]  items-center">
-                      
-                        <div className=" flex  w-[100%]  rounded-lg  h-[12rem] ">
-                          <div className="flex  justify-center items-center flex-col w-[100%]">
-                          <textarea
-                            cols={50}
-                            rows={14}
-                            type="text"
-                            className="h-[70%] bg-skin-base-3 resize-none shadow-sm w-[100%] rounded-2xl  p-4"
-                            placeholder="Comment here"
-                            name=""
-                            id=""
-                          />
-                          <div className="  w-[100%] my-2 ">
-                            <button className="p-2 px-2  mx-1 rounded-2xl text-black float-right bg-white">
-                              Comment
-                            </button>
-                          </div>
-                          </div>
-                        </div>
-                       
+            <div className="flex flex-col justify-center items-center ">
+              <div className="flex flex-col justify-center md:w-[70%]  w-[100%]  items-center">
+                <div className=" flex  w-[100%]  rounded-lg  h-[12rem] ">
+                  <div className="flex  justify-center items-center flex-col w-[100%]">
+                    <textarea
+                      cols={50}
+                      rows={14}
+                      type="text"
+                      className="h-[70%] bg-skin-base-3 resize-none shadow-sm w-[100%] rounded-2xl  p-4"
+                      placeholder="Comment here"
+                      name=""
+                      id=""
+                    />
+                    <div className="  w-[100%] my-2 ">
+                      <button className="p-2 px-2  mx-1 rounded-2xl text-black float-right bg-white">
+                        Comment
+                      </button>
+                    </div>
                   </div>
-                
+                </div>
               </div>
+            </div>
           </Card>
         </ToggleableComponent>
       </div>

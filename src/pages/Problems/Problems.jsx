@@ -14,49 +14,49 @@ import useWindowSize from "../../hooks/useWindowSize";
 import Search from "../../components/Search/Search";
 
 const Problems = (props) => {
-  const lst =  [
+  const lst = [
     {
       queHeading: "Question 1",
       ac: "String 1",
       difficulty: "Easy",
       solved: true,
-      topic: "Topic 1"
+      topic: "Topic 1",
     },
     {
       queHeading: "Question 2",
       ac: "String 2",
       difficulty: "Medium",
       solved: false,
-      topic: "Topic 2"
+      topic: "Topic 2",
     },
     {
       queHeading: "Question 3",
       ac: "String 3",
       difficulty: "Hard",
       solved: true,
-      topic: "Topic 3"
+      topic: "Topic 3",
     },
     {
       queHeading: "Question 1",
       ac: "String 1",
       difficulty: "Easy",
       solved: true,
-      topic: "Topic 1"
+      topic: "Topic 1",
     },
     {
       queHeading: "Question 2",
       ac: "String 2",
       difficulty: "Medium",
       solved: false,
-      topic: "Topic 2"
+      topic: "Topic 2",
     },
     {
       queHeading: "Question 3",
       ac: "String 3",
       difficulty: "Hard",
       solved: true,
-      topic: "Topic 3"
-    }
+      topic: "Topic 3",
+    },
     // Add more objects as needed
   ];
   const windowSize = useWindowSize();

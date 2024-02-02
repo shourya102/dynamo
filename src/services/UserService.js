@@ -1,5 +1,4 @@
 import TokenService from "./TokenService";
-import Api from "./Api";
 import axios from "axios";
 
 class UserService {
@@ -19,6 +18,17 @@ class UserService {
   signUp(userDetails) {
     return axios
       .post("http://localhost:8080/api/auth/signup", userDetails)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((error) => {
+        //later
+      });
+  }
+
+  verifyUserEmail(token) {
+    return axios
+      .post("http://localhost:8080/api/auth/verify/" + token)
       .then((res) => {
         console.log(res.data);
       })

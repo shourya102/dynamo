@@ -16,8 +16,11 @@ export default function SignIn() {
   const navigate = useNavigate();
   const signIn = (e) => {
     e.preventDefault();
-    userService.signIn({ username, password });
-    if (userService.getCurrentUser()) navigate("/");
+    userService.signIn({ username, password }).then((res) => {
+      if (userService.getCurrentUser()) {
+        navigate("/");
+      }
+    });
   };
 
   return (
@@ -62,13 +65,13 @@ export default function SignIn() {
           </div>
           <div className="add-top  flex mt-5 p-3 gap-4 justify-center ">
             <IconContext.Provider value={{ size: "30" }}>
-              <a href="#">
+              <a href="/">
                 <BiLogoFacebook />
               </a>
-              <a href="#">
+              <a href="/">
                 <BiLogoLinkedin />
               </a>
-              <a href="#">
+              <a href="/">
                 <BiLogoInstagram />
               </a>
             </IconContext.Provider>
