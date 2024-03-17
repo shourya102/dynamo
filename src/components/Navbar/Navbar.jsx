@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import logo from "./logo.png";
 import { FiMenu, FiX } from "react-icons/fi";
 import "./Navbar.css";
@@ -6,19 +6,12 @@ import ToggleButton from "../ToggleButton/ToggleButton";
 import { NavbarList } from "./NavbarList";
 import { Link } from "react-router-dom";
 import ProfileDropdown from "../ProfileDropdown/ProfileDropdown";
-import userService from "../../services/UserService";
+import { useSelector } from "react-redux";
+import { selectUserLoggedIn } from "../../features/user/userSlice";
 
 const Navbar = (props) => {
   const [mobiletask, setmobiletask] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false);
-
-  useEffect(() => {
-    if (userService.getCurrentUser()) {
-      setLoggedIn(true);
-    } else {
-      setLoggedIn(false);
-    }
-  }, []);
+  const loggedIn = useSelector(selectUserLoggedIn);
 
   const click = () => {
     setmobiletask(!mobiletask);
@@ -48,7 +41,7 @@ const Navbar = (props) => {
         </div>
         <div className="hidden lg:flex float-right justify-center items-center ml-4 mr-4 gap-3">
           <ToggleButton click={props.darkMode} theme={props.theme} />
-          {loggedIn && <ProfileDropdown setLoggedIn={setLoggedIn} />}
+          {loggedIn && <ProfileDropdown />}
           {!loggedIn && (
             <div className="space-x-2">
               <Link

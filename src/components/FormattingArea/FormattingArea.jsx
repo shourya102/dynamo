@@ -112,7 +112,9 @@ const FormattingArea = (props) => {
           </div>
         </div>
       </div>
-      <div className="rounded-b-2xl bg-skin-base-3 text-skin-bright h-64 p-3 w-full overflow-y-scroll">
+      <div
+        className={`${props.className} rounded-b-2xl bg-skin-base-3 text-skin-bright h-64 p-3 w-full overflow-y-scroll`}
+      >
         <Editor
           ref={domEditor}
           placeholder="Insert text here..."

@@ -14,7 +14,7 @@
         --fill-color-1: #f5e3e6;
         --fill-color-2: #d9e4f5;
         --fill-color-3: rgb(255, 255, 255, 0.2);
-        --fill-color-4: #bedbf241;
+        --fill-color-4: rgba(160, 160, 160, 0.2);
         --fill-bright: rgb(80, 80, 80);
         --bg-grad-1: linear-gradient(315deg, var(--fill-color-1) 0%, var(--fill-color-2) 74%);
         --fill-in-1: rgb(200, 200, 200, 0.2);

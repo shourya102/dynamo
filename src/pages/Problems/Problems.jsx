@@ -7,58 +7,13 @@ import {
   AiOutlineClose,
 } from "react-icons/ai";
 import { FaRandom } from "react-icons/fa";
-import Table from "../../components/Table/Table";
 import LinkCard from "../../components/LinkCard/LinkCard";
 import { LinkCardList } from "./LinkCardList";
 import useWindowSize from "../../hooks/useWindowSize";
 import Search from "../../components/Search/Search";
+import Table from "../../components/Table/Table";
 
 const Problems = (props) => {
-  const lst = [
-    {
-      queHeading: "Question 1",
-      ac: "String 1",
-      difficulty: "Easy",
-      solved: true,
-      topic: "Topic 1",
-    },
-    {
-      queHeading: "Question 2",
-      ac: "String 2",
-      difficulty: "Medium",
-      solved: false,
-      topic: "Topic 2",
-    },
-    {
-      queHeading: "Question 3",
-      ac: "String 3",
-      difficulty: "Hard",
-      solved: true,
-      topic: "Topic 3",
-    },
-    {
-      queHeading: "Question 1",
-      ac: "String 1",
-      difficulty: "Easy",
-      solved: true,
-      topic: "Topic 1",
-    },
-    {
-      queHeading: "Question 2",
-      ac: "String 2",
-      difficulty: "Medium",
-      solved: false,
-      topic: "Topic 2",
-    },
-    {
-      queHeading: "Question 3",
-      ac: "String 3",
-      difficulty: "Hard",
-      solved: true,
-      topic: "Topic 3",
-    },
-    // Add more objects as needed
-  ];
   const windowSize = useWindowSize();
   const [showFloatingBoxes, setShowFloatingBoxes] = useState(false);
   const scrollContainerRef = useRef(null);
@@ -99,7 +54,7 @@ const Problems = (props) => {
 
   return (
     <div className="flex justify-center">
-      <div className="flex flex-col bg-skin-base-3 w-full md:w-fit h-[98rem] p-4 space-y-2">
+      <div className="flex flex-col bg-skin-base-3 w-full md:w-fit min-h-[54rem] p-4 space-y-4">
         {!showFloatingBoxes && (
           <ul className="flex space-x-3 justify-center">
             {LinkCardList.map((item, index) => {
@@ -193,8 +148,8 @@ const Problems = (props) => {
             </button>
           </div>
         </div>
-        <div>
-          <Table Problems={lst}></Table>
+        <div className="w-full mt-7 bg-transparent rounded-lg overflow-clip">
+          <Table></Table>
         </div>
       </div>
     </div>

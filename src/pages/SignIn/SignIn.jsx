@@ -8,16 +8,20 @@ import { IconContext } from "react-icons";
 import { Link, useNavigate } from "react-router-dom";
 import "./SignIn.css";
 import userService from "../../services/UserService";
+import { useDispatch } from "react-redux";
+import { login } from "../../features/user/userSlice";
 
 export default function SignIn() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const signIn = (e) => {
     e.preventDefault();
     userService.signIn({ username, password }).then((res) => {
       if (userService.getCurrentUser()) {
+        dispatch(login());
         navigate("/");
       }
     });

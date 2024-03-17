@@ -7,10 +7,13 @@ import { AiOutlineQuestion } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { BiLogOut } from "react-icons/bi";
 import userService from "../../services/UserService";
+import { useDispatch } from "react-redux";
+import { logout as gLogout } from "../../features/user/userSlice";
 
 const ProfileDropdown = (props) => {
   const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
+  const dispatch = useDispatch();
   const clickedProfile = () => {
     setIsVisible((prevState) => !prevState);
   };
@@ -34,8 +37,9 @@ const ProfileDropdown = (props) => {
 
   const logout = () => {
     if (userService.getCurrentUser()) {
-      userService.logOut(userService.getCurrentUser().id);
-      props.setLoggedIn(false);
+      userService.logOut(userService.getCurrentUser().id).then((res) => {
+        dispatch(gLogout());
+      });
       navigate("/");
     }
   };
