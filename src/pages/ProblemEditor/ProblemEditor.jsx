@@ -18,6 +18,11 @@ import Dropdown from "../../components/Dropdown/Dropdown";
 import Card from "../../components/Card/Card";
 import ProblemService from "../../services/ProblemService";
 import { CSSTransition } from "react-transition-group";
+import ReactCodeMirror from "@uiw/react-codemirror";
+import { loadLanguage } from "@uiw/codemirror-extensions-langs";
+import { darcula } from "@uiw/codemirror-themes-all";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const ProblemEditor = () => {
   const [problemName, setProblemName] = useState("");
@@ -28,6 +33,7 @@ const ProblemEditor = () => {
   const [selectedTopics, setSelectedTopics] = useState([]);
   const [parameterNames, setParameterNames] = useState([]);
   const [parameterTypes, setParameterTypes] = useState([]);
+  const [testCaseList, setTestCaseList] = useState([]);
   const [index, setIndex] = useState(0);
   const topicList = [
     "Array",
@@ -63,20 +69,32 @@ const ProblemEditor = () => {
     "Long",
     "Unsigned Integer",
   ];
+  const navigate = useNavigate();
   const [parametersList, setParametersList] = useState([]);
+  const [testCaseIndex, setTestCaseIndex] = useState(0);
+  const [testCode, setTestCode] = useState("");
 
   const handleSubmit = () => {
-    ProblemService.createProblem({
-      name: problemName,
-      difficulty: difficulty,
-      problemDescription: problemDescription,
-      returnType: returnType,
-      methodName: methodName,
-      parameterNames: parameterNames,
-      parameterTypes: parameterTypes,
-      topics: selectedTopics,
-    });
+    axios
+      .post("http://localhost:8080/api/problems/create-problem", {
+        name: problemName,
+        difficulty: difficulty,
+        problemDescription: problemDescription,
+        returnType: returnType,
+        methodName: methodName,
+        parameterNames: parameterNames,
+        parameterTypes: parameterTypes,
+        topics: selectedTopics,
+        inputList: testCaseList.map((i) => i.inputs),
+        outputList: testCaseList.map((i) => i.output),
+        testCode: testCode,
+      })
+      .then((r) => navigate("/problems"));
   };
+
+  useEffect(() => {
+    console.log(testCode);
+  }, [testCode]);
 
   useEffect(() => {
     setParameterNames(parametersList.map((i) => i.name));
@@ -109,6 +127,29 @@ const ProblemEditor = () => {
     });
   };
 
+  const addTestCase = (index) => {
+    setTestCaseList((prevState) => [
+      ...prevState,
+      {
+        id: index,
+        inputs: "",
+        output: "",
+      },
+    ]);
+  };
+
+  const updateTestCase = (index, updatedItem) => {
+    setTestCaseList((prevState) => {
+      return prevState.map((item) =>
+        item.id === index ? { ...updatedItem } : item,
+      );
+    });
+  };
+
+  const removeTestCase = (index) => {
+    setTestCaseList((prevState) => prevState.filter((i) => i.id !== index));
+  };
+
   const filteredList = useMemo(() => {
     return topicList.filter((item) =>
       item.toLowerCase().includes(searchTerm.toLowerCase()),
@@ -134,7 +175,7 @@ const ProblemEditor = () => {
   };
 
   return (
-    <div className="flex mx-4 mt-4 mb-20 justify-center font-inter h-[54.5rem]">
+    <div className="flex mx-4 mt-4 mb-20 justify-center font-inter min-h-[54.5rem] overflow-y-scroll">
       <div className="items-center space-y-2 text-paragraph w-full sm:w-5/6 md:w-2/3 lg:w-1/2 flex flex-col relative">
         <div className="w-full flex items-center">
           <div
@@ -391,6 +432,99 @@ const ProblemEditor = () => {
                       </div>
                     );
                   })}
+                </div>
+              </Card>
+              <Card>
+                <label
+                  className="flex items-center space-x-1"
+                  htmlFor="testCases"
+                >
+                  <PiNumberTwoFill />
+                  <span>What should be the test cases?</span>
+                </label>
+                <div className="w-full flex flex-col space-y-2">
+                  <button
+                    onClick={() =>
+                      addTestCase(() => {
+                        let index_temp = testCaseIndex;
+                        setTestCaseIndex((prevState) => prevState + 1);
+                        return index_temp;
+                      })
+                    }
+                    className="self-center flex items-center space-x-1 bg-skin-base-3 border border-skin-border-2 rounded-2xl p-3"
+                  >
+                    <span>Add Test Case</span>
+                    <AiFillPlusCircle size={33} />
+                  </button>
+                  {testCaseList.map((item, index) => {
+                    return (
+                      <div key={index} className="flex items-center rounded-lg">
+                        <input
+                          value={item.inputs}
+                          onChange={(e) =>
+                            updateTestCase(item.id, {
+                              ...item,
+                              inputs: e.target.value,
+                            })
+                          }
+                          placeholder="Enter input like '10,20,30,abc'"
+                          name="inputs"
+                          id="inputs"
+                          className="flex-grow shadow-sm bg-skin-base-3 p-3 border-y border-l rounded-l-lg border-skin-border-2"
+                        />
+                        <input
+                          value={item.output}
+                          onChange={(e) =>
+                            updateTestCase(item.id, {
+                              ...item,
+                              output: e.target.value,
+                            })
+                          }
+                          placeholder="Enter the output for the given input..."
+                          name="output"
+                          id="output"
+                          className="flex-grow shadow-sm bg-skin-base-3 p-3 border rounded-r-lg border-skin-border-2"
+                        />
+                        <button
+                          onClick={() => removeTestCase(item.id)}
+                          className="bg-skin-base-3 p-3 shadow-sm hover:bg-red-600 bg-transition border-y border-r border-skin-border-2"
+                        >
+                          <AiOutlineClose />
+                        </button>
+                      </div>
+                    );
+                  })}
+                </div>
+              </Card>
+              <Card>
+                <label
+                  className="flex items-center space-x-1"
+                  htmlFor="testCases"
+                >
+                  <PiNumberThreeFill />
+                  <span>Please enter the code to be used for testing.</span>
+                </label>
+                <div className="w-full flex flex-col space-y-2">
+                  <div className="flex flex-col overflow-y-scroll border border-skin-border-2 rounded-lg h-[20rem]">
+                    <div className="p-2 w-fit">
+                      <Dropdown
+                        title="Language"
+                        color="skin-base-2"
+                        radius="lg"
+                        grow={false}
+                      >
+                        <div className="p-2 justify-center flex">Java</div>
+                        <div className="p-2 justify-center flex">C++</div>
+                      </Dropdown>
+                    </div>
+                    <ReactCodeMirror
+                      theme={darcula}
+                      minHeight="20rem"
+                      value={testCode}
+                      onChange={(e) => setTestCode(e)}
+                      extensions={[loadLanguage("java")]}
+                    />
+                  </div>
                 </div>
               </Card>
               <div className="flex space-x-2">

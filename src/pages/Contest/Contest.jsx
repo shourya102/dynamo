@@ -1,6 +1,5 @@
 import React from "react";
 import { AiFillTrophy } from "react-icons/ai";
-import { GiPrivate } from "react-icons/gi";
 import { FcPrivacy } from "react-icons/fc";
 import { MdOutlinePublic } from "react-icons/md";
 

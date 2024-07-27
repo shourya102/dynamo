@@ -47,7 +47,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/contest" element={<Contest />} />
           <Route path="/solution" element={<Solution />} />
-          <Route path="/problem" element={<Problem />} />
+          <Route path="/problems/:id" element={<Problem />} />
           <Route path="/createpost" element={<PostEditor />} />
           <Route path="/communitypost" element={<CommunityPost />} />
         </Routes>

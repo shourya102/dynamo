@@ -1,5 +1,7 @@
 import React from "react";
 import { BsFillPersonFill } from "react-icons/bs";
+import { BiLike } from "react-icons/bi";
+import { AiFillHeart, AiOutlineDislike, AiOutlineLike } from "react-icons/ai";
 
 const Comment = () => {
   return (
@@ -21,6 +23,15 @@ const Comment = () => {
         provident, quos recusandae reiciendis repudiandae saepe sed sequi
         similique tempora ullam unde ut vitae. Eligendi, sint!
       </p>
+      <div className="flex space-x-2">
+        <button className="p-3 flex space-x-1 items-center bg-skin-base-2 border border-skin-border-2 rounded-2xl">
+          <AiOutlineLike />
+          <span>999</span>
+        </button>
+        <button className="p-3">
+          <AiOutlineDislike />
+        </button>
+      </div>
     </div>
   );
 };

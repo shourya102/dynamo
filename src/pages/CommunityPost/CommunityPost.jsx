@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { BsFillPersonFill } from "react-icons/bs";
 import { AiFillDislike, AiFillLike } from "react-icons/ai";
-import { BiShare } from "react-icons/bi";
+import { BiDotsHorizontal, BiDotsVertical, BiShare } from "react-icons/bi";
 import FormattingArea from "../../components/FormattingArea/FormattingArea";
 import { CgComment } from "react-icons/cg";
 import Comment from "../../components/Comment/Comment";
+import { TbDots } from "react-icons/tb";
 
 const CommunityPost = () => {
   const [comment, setComment] = useState("");
@@ -22,6 +23,11 @@ const CommunityPost = () => {
                 <BsFillPersonFill size={30} />
               </span>
               <h1>Shourya Sahu</h1>
+              <div className="flex-grow justify-end flex">
+                <button className="flex -translate-y-3 self-center">
+                  <BiDotsVertical />
+                </button>
+              </div>
             </div>
             <span className="ml-14 -translate-y-5">Posted 1 hour ago</span>
           </div>
@@ -41,10 +47,11 @@ const CommunityPost = () => {
           </div>
           <div className="flex justify-between space-x-1 mt-8">
             <div className="flex space-x-1">
-              <button className="w-20 bg-skin-base-2 border border-skin-border-2 p-3 flex justify-center rounded-2xl">
+              <button className="w-20 items-center space-x-1 ibg-skin-base-2 border border-skin-border-2 p-3 flex justify-center rounded-2xl">
                 <AiFillLike />
+                <span>999</span>
               </button>
-              <button className="w-20 bg-skin-base-2 border border-skin-border-2 p-3 flex justify-center rounded-2xl">
+              <button className="w-20 flex items-center p-3 justify-center rounded-2xl">
                 <AiFillDislike />
               </button>
             </div>

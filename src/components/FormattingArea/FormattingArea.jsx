@@ -22,7 +22,10 @@ const FormattingArea = (props) => {
   const domEditor = useRef(null);
   const [bold, setBold] = useState(false);
   const [italic, setItalic] = useState(false);
+  const [underline, setUnderline] = useState(false);
   const rawContentState = convertToRaw(editorState.getCurrentContent());
+  const [strikethrough, setStrikethrough] = useState(false);
+  const [code, setCode] = useState(false);
 
   const handleKeyCommand = (command) => {
     const newState = RichUtils.handleKeyCommand(editorState, command);
@@ -46,6 +49,9 @@ const FormattingArea = (props) => {
     currentStyles = JSON.parse(currentStyles);
     setBold(currentStyles.includes("BOLD"));
     setItalic(currentStyles.includes("ITALIC"));
+    setUnderline(currentStyles.includes("UNDERLINE"));
+    setStrikethrough(currentStyles.includes("STRIKETHROUGH"));
+    setCode(currentStyles.includes("CODE"));
   }, [editorState]);
 
   const onToggleInlineStyle = (style, e) => {
@@ -76,10 +82,22 @@ const FormattingArea = (props) => {
           </button>
         </div>
         <div className="flex space-x-3 px-5 border-r-2 border-skin-border-2">
-          <button>
+          <button
+            className={
+              strikethrough
+                ? "text-skin-bright-rev rounded-md bg-skin-bright"
+                : ""
+            }
+            onMouseDown={(e) => onToggleInlineStyle("STRIKETHROUGH", e)}
+          >
             <BiStrikethrough />
           </button>
-          <button>
+          <button
+            className={
+              underline ? "text-skin-bright-rev rounded-md bg-skin-bright" : ""
+            }
+            onMouseDown={(e) => onToggleInlineStyle("UNDERLINE", e)}
+          >
             <BiUnderline />
           </button>
           <button>
@@ -87,7 +105,12 @@ const FormattingArea = (props) => {
           </button>
         </div>
         <div className="flex space-x-3 px-5">
-          <button>
+          <button
+            className={
+              code ? "text-skin-bright-rev rounded-md bg-skin-bright" : ""
+            }
+            onMouseDown={(e) => onToggleInlineStyle("CODE", e)}
+          >
             <BiCode />
           </button>
           <div>
